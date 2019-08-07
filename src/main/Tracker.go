@@ -111,16 +111,16 @@ func main() {
 
 	//fmt.Println("###")
 
-	mlist.InitList()
+	mlist.InitList("Test")
 	//myredis.Init()
-	testrc := myredis.RedisClient.Get()
-	testrc.Do("set", "testkey", "test")
-	data, er := testrc.Do("get", "testkey")
-	if er != nil {
-		fmt.Println(er)
-	} else {
-		fmt.Println(data)
-	}
+	//testrc := myredis.RedisClient.Get()
+	//testrc.Do("set", "testkey", "test")
+	//data, er := testrc.Do("get", "testkey")
+	//if er != nil {
+	//	fmt.Println(er)
+	//} else {
+	//	fmt.Println(data)
+	//}
 	//mlist.RedisConn = myredis.RedisClient.Get()
 	//fmt.Println("###")
 	//fmt.Scanln(&N)
