@@ -66,6 +66,15 @@ func deServer() error {
 	fmt.Println("OK")
 	return nil
 }
+func getSize() error {
+	size, err := mlist.GetServerSize()
+	if err != nil {
+		fmt.Println("err on get size")
+		return err
+	}
+	fmt.Println(size)
+	return nil
+}
 
 //ControlDB : Any Operation
 func ControlDB(oper string) error {
@@ -112,18 +121,6 @@ func main() {
 	//fmt.Println("###")
 
 	mlist.InitList("Test")
-	//myredis.Init()
-	//testrc := myredis.RedisClient.Get()
-	//testrc.Do("set", "testkey", "test")
-	//data, er := testrc.Do("get", "testkey")
-	//if er != nil {
-	//	fmt.Println(er)
-	//} else {
-	//	fmt.Println(data)
-	//}
-	//mlist.RedisConn = myredis.RedisClient.Get()
-	//fmt.Println("###")
-	//fmt.Scanln(&N)
 	N = 1000
 	for i := 0; i < N; i++ {
 
@@ -144,6 +141,8 @@ func main() {
 			err = enServerv()
 		case "DeConn":
 			err = deServer()
+		case "GetSize":
+			err = getSize()
 		default:
 			err = ControlDB(oper)
 		}
