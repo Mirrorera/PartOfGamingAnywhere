@@ -120,7 +120,7 @@ func main() {
 
 	//fmt.Println("###")
 
-	mlist.InitList("Test")
+	mlist.InitList("Test", "../../conf/myredis.conf")
 	N = 1000
 	for i := 0; i < N; i++ {
 
